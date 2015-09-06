@@ -9,6 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -93,6 +94,11 @@ public class MainActivity extends ActionBarActivity {
                    //list of data
                    weekForecast
            );
+
+            //rootView would be the view of the placeholderfragment, which we just inflated
+            ListView myListView = (ListView)rootView.findViewById(R.id.listView);
+
+            myListView.setAdapter(mForecastAdapter);
 
             return rootView;
         }
